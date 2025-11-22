@@ -10,7 +10,7 @@ public:
 	~Button();
 	void Draw();
 	bool isPressed();
-
+	void Hover();
 };
 
 	

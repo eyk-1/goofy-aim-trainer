@@ -23,5 +23,13 @@ void Button::Draw()
 bool Button::isPressed()
 {
 	Rectangle rec = {position.x,position.y,(float)texture.width,(float)texture.height};
+	if (CheckCollisionPointRec(GetMousePosition(), rec)) 
 	return (CheckCollisionPointRec(GetMousePosition(), rec) && IsMouseButtonPressed(MOUSE_BUTTON_LEFT));
+}
+
+void Button::Hover() {
+	Rectangle rec = { position.x,position.y,(float)texture.width,(float)texture.height };
+	if (CheckCollisionPointRec(GetMousePosition(), rec)) {
+		DrawRectangleLines(position.x, position.y, (float)texture.width, (float)texture.height, RED);
+	}
 }
